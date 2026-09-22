@@ -6,6 +6,13 @@ Station example: **VU2UPX** · Grid **MK69KE**
 
 Inspired by the ADX-style Si5351 digital transceiver concept, implemented with the [Earle Philhower Arduino-Pico core](https://github.com/earlephilhower/arduino-pico).
 
+<p align="center">
+  <img src="manual_build/figures/web_ui_screenshot_off.png" alt="Web UI — Beacon OFF" width="320">
+  &nbsp;
+  <img src="manual_build/figures/web_ui_screenshot_on.png" alt="Web UI — Beacon ON" width="320">
+</p>
+<p align="center"><em>Built-in web interface — Beacon OFF (left) / Beacon ON (right)</em></p>
+
 ---
 
 ## Step-1 (current milestone)
@@ -21,6 +28,17 @@ Standalone **FT8 / WSPR beacon** platform with:
 | Network | WiFi Manager (STA/AP), NTP, web UI |
 | Beacons | FT8 (once/min) + WSPR Type 1 — **Beacon default OFF** (web toggle) |
 | Time | IST on OLED/TFT; UTC for slot timing |
+
+### Displays
+
+| OLED (primary) | TFT TX log (optional) |
+|:---:|:---:|
+| <img src="manual_build/figures/ph_oled.png" alt="OLED placeholder" width="280"> | <img src="manual_build/figures/ph_tft.png" alt="TFT placeholder" width="180"> |
+| Mode · IST · frequency · RX/TX · IP | Circular log: `MODE  BAND  DD-MM-YYYY  HH:MM:SS` (IST) |
+
+> Replace `ph_oled.png` / `ph_tft.png` under `manual_build/figures/` with your own photos when available.
+
+---
 
 ### Firmware
 
@@ -63,13 +81,23 @@ Serial: **115200 baud**.
 - After STA join: IP shown on OLED
 - Soft buttons: Mode, Band, Tune/PTT, Menu/Cal, **Beacon ON/OFF**
 
+<p align="center">
+  <img src="manual_build/figures/web_ui_main.png" alt="Web UI overview" width="360">
+</p>
+<p align="center"><em>Web UI layout — status, soft buttons, correction, WiFi Manager, I2C scan</em></p>
+
 ---
 
 ## Calibration
 
 Long-press **encoder switch** → 10 MHz on **CLK1** → adjust correction with encoder → long-press **Switch A** to save EEPROM.
 
-See the User Manual in `docs/` for the full procedure.
+<p align="center">
+  <img src="manual_build/figures/calibration_flow.png" alt="Calibration flow" width="560">
+</p>
+<p align="center"><em>Si5351 calibration procedure</em></p>
+
+See the User Manual in [`docs/`](docs/) for the full procedure.
 
 ---
 
@@ -98,9 +126,9 @@ bash bump_version.sh patch "Your note"
 
 ## License
 
-Hardware and documentation: share freely for amateur radio use.  
-Respect library licenses (JTEncode, Si5351, TFT_eSPI, U8g2).
+MIT — see [LICENSE](LICENSE).  
+Third-party libraries (JTEncode, Si5351, TFT_eSPI, U8g2) retain their own licenses.
 
 ## Author
 
-VU2UPX — PICO-2W PDX project
+**VU2UPX** — PICO-2W PDX project
