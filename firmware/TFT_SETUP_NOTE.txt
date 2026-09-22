@@ -1,0 +1,18 @@
+TFT_eSPI setup for PICO2W PDX (ILI9341 portrait TX log)
+=======================================================
+
+1. Copy PICO2W_PDX_ILI9341.h to:
+   Documents/Arduino/libraries/TFT_eSPI/User_Setups/PICO2W_PDX_ILI9341.h
+
+2. Edit Documents/Arduino/libraries/TFT_eSPI/User_Setup_Select.h
+   - Comment out the default #include <User_Setup.h>
+   - Add:
+     #include <User_Setups/PICO2W_PDX_ILI9341.h>
+
+3. In config.h: DISPLAY_OPTION 1  (already set)
+
+4. Portrait mode: setRotation(0) -> 240 x 320
+   TX events scroll on the TFT; OLED remains primary status display.
+
+Pins (validated):
+  SCK GP18, MOSI GP19, MISO GP16, CS GP17, DC GP20, RST GP21, T_CS GP22

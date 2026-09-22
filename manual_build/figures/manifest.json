@@ -1,0 +1,60 @@
+{
+  "figures": [
+    {
+      "id": "fig_hardware",
+      "file": "ph_hardware.png",
+      "caption": "Hardware / PCB",
+      "type": "placeholder",
+      "section": "1.1"
+    },
+    {
+      "id": "fig_web_off",
+      "file": "web_ui_screenshot_off.png",
+      "caption": "Web UI (Beacon OFF)",
+      "type": "screenshot",
+      "section": "2.1"
+    },
+    {
+      "id": "fig_web_on",
+      "file": "web_ui_screenshot_on.png",
+      "caption": "Web UI (Beacon ON)",
+      "type": "screenshot",
+      "section": "2.2"
+    },
+    {
+      "id": "fig_oled",
+      "file": "ph_oled.png",
+      "caption": "OLED display",
+      "type": "placeholder",
+      "section": "3.1"
+    },
+    {
+      "id": "fig_tft",
+      "file": "ph_tft.png",
+      "caption": "TFT TX log",
+      "type": "placeholder",
+      "section": "3.2"
+    },
+    {
+      "id": "fig_cal_flow",
+      "file": "calibration_flow.png",
+      "caption": "Calibration procedure flow",
+      "type": "diagram",
+      "section": "8"
+    },
+    {
+      "id": "fig_cal_setup",
+      "file": "ph_cal_setup.png",
+      "caption": "Calibration bench setup",
+      "type": "placeholder",
+      "section": "8"
+    },
+    {
+      "id": "fig_antenna",
+      "file": "ph_antenna.png",
+      "caption": "Antenna / dummy load",
+      "type": "placeholder",
+      "section": "9"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PICO2W PDX</title>
+  <style>
+    *{box-sizing:border-box}
+    body{font-family:system-ui,sans-serif;background:#0d1117;color:#e6edf3;
+         margin:0;padding:16px;text-align:center}
+    h1{color:#58a6ff;margin:8px 0 16px}
+    .card{background:#161b22;border:1px solid #30363d;padding:16px;
+          border-radius:10px;margin:0 auto 14px;max-width:420px}
+    .freq{font-size:2.2rem;font-weight:700;color:#3fb950;letter-spacing:1px;
+          margin:10px 0;font-variant-numeric:tabular-nums}
+    .label{color:#8b949e;font-size:0.85rem}
+    .val{font-size:1.1rem;margin:4px 0 10px}
+    button{padding:10px 16px;margin:5px;font-size:15px;border:none;
+           border-radius:8px;background:#238636;color:#fff;cursor:pointer}
+    button.secondary{background:#21262d;border:1px solid #30363d}
+    button.danger{background:#da3633}
+    input,select{padding:10px;font-size:15px;width:90%;max-width:280px;
+         margin:6px auto;display:block;background:#0d1117;color:#e6edf3;
+         border:1px solid #30363d;border-radius:6px}
+    .i2c-line{padding:4px 0;border-bottom:1px solid #21262d;font-family:monospace;text-align:left}
+    #scanResult{text-align:left;max-width:320px;margin:10px auto;font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <h1>PICO2W PDX</h1>
+  <div class="card">
+    <div class="label">FREQUENCY</div>
+    <div class="freq">14.074.000</div>
+    <div class="val">FT8 &nbsp;|&nbsp; 20M &nbsp;|&nbsp; RX</div>
+    <div class="label">Beacon</div>
+    <div class="val" id="beaconVal">OFF</div>
+    <div class="label">Time (IST)</div>
+    <div class="val">22:45:10</div>
+    <div class="label">Call / Grid</div>
+    <div class="val">VU2UPX &nbsp; MK69KE</div>
+    <div class="label">Network</div>
+    <div class="val">Mode: STA<br>IP: 192.168.1.42</div>
+  </div>
+  <div class="card">
+    <div class="label">SOFT BUTTONS</div>
+    <button>Mode (A)</button>
+    <button>Band Up (B)</button>
+    <button>Band Dn (C)</button><br>
+    <button>Tune / PTT</button>
+    <button>Menu / Cal</button><br>
+    <button id="beaconBtn" style="background:#238636">Beacon OFF</button>
+  </div>
+  <div class="card">
+    <div class="label">Si5351 CORRECTION</div>
+    <div class="val">Current: 0</div>
+    <input type="number" value="0">
+    <button>Set Corr</button>
+    <button class="danger">Save EEPROM</button>
+  </div>
+  <div class="card">
+    <div class="label">WiFiManager (credentials)</div>
+    <div class="val">Stored SSID: HomeNet</div>
+    <button class="secondary">Scan Networks</button>
+    <div id="scanResult">
+      <div class="i2c-line">HomeNet (-42 dBm) *</div>
+      <div class="i2c-line">NeighborWiFi (-68 dBm) *</div>
+    </div>
+    <input type="text" placeholder="SSID" value="HomeNet">
+    <input type="password" placeholder="Password" value="********">
+    <button>Save & Connect</button>
+    <button class="danger">Erase credentials</button>
+  </div>
+  <div class="card">
+    <div class="label">I2C DEVICES</div>
+    <div class="i2c-line">0x3C &nbsp; OLED SH1106/SSD1306</div>
+    <div class="i2c-line">0x60 &nbsp; Si5351</div>
+  </div>
+</body>
+</html>
