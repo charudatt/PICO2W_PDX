@@ -1,6 +1,6 @@
 # Hardware
 
-Add here:
+Added here:
 
 - Schematic PDF
 - PCB photos
